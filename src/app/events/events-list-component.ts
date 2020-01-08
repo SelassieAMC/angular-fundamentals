@@ -3,26 +3,19 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-events-list',
   template: `
-    <div>
-      <h1>Upcoming Angular Events</h1>
-    <div>
-    <hr>
-    <div class="well hoverwell thumbnail">
-        <h2>{{event.name}}</h2>
-        <div>Date: {{event.date}}</div>
-        <div>Time: {{event.time}}</div>
-        <div>Price: \${{event.price}}</div>
-        <div>
-          <span>Location: {{event.location.address}}</span>
-          <span>&nbsp;</span>
-          <span>{{event.location.city}}, {{event.location.country}}</span>
-        </div>
-    </div>
-  `
+  <div>
+  <h1>Upcoming Angular Events</h1>
+  <div>
+  <hr>
+  <!-- <app-event-thumbnail [event]="event1" (clickme)="eventClickHandler($event);"></app-event-thumbnail> -->
+  <!-- <app-event-thumbnail #thumbnail [event]="event1"></app-event-thumbnail> -->
+  <!-- <button (click)="thumbnail.tryTemplate()">{{thumbnail.localVariable}}</button> -->
+  <app-event-thumbnail [event]="event1"></app-event-thumbnail>
+`
 })
 
 export class EventListComponent {
-  event = {
+  event1 = {
     id: 1,
     name: 'Angular Connect',
     date: '09/26/2036',
@@ -35,4 +28,8 @@ export class EventListComponent {
       country: 'England'
     }
   };
+
+  // eventClickHandler(value){
+  //   console.log('This is the value returned: ' + value);
+  // }
 }
