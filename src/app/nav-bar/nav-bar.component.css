@@ -11,3 +11,7 @@
     display: none;
   }
 }
+
+li > a.router-link-active {
+  color: #F97924;
+}
