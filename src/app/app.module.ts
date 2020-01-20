@@ -14,6 +14,7 @@ import { EventService } from './events/Share/event.service';
 import { EventRouterActivator } from './events/event-details/event.router.activator.service';
 import { EventListResolver } from './events/event-list-resolver.service';
 import { AuthService } from './user/auth.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { AuthService } from './user/auth.service';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -49,5 +52,5 @@ export function checkDirtyState( component: CreateEventComponent) {
   if (component.isDirty) {
     return window.confirm('You have not saved this event, do you really want to cancel?');
   }
-  return false;
+  return true;
 }
