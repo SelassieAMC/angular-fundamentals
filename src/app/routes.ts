@@ -6,9 +6,11 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { EventRouterActivator } from './events/event-details/event.router.activator.service';
 import { Error404Component } from './errors/404.component';
 import { EventListResolver } from './events/event-list-resolver.service';
+import { CreateSessionComponent } from './events/create-session/create-session.component';
 
 
 export const appRoutes: Routes = [
+    {path: 'events/session/create', component: CreateSessionComponent},
     {path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
     {path: 'events', component: EventListComponent, resolve: { events: EventListResolver}},
     {path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouterActivator]},

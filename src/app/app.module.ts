@@ -15,6 +15,7 @@ import { EventRouterActivator } from './events/event-details/event.router.activa
 import { EventListResolver } from './events/event-list-resolver.service';
 import { AuthService } from './user/auth.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CreateSessionComponent } from './events/create-session/create-session.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent
   ],
   imports: [
     BrowserModule,
