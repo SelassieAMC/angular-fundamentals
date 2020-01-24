@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from './Share/event.service';
-import { ToastrService } from '../common/toastr.service';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -16,7 +15,8 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
   <!-- <button (click)="thumbnail.tryTemplate()">{{thumbnail.localVariable}}</button> -->
   <div class="row">
     <div *ngFor="let event of events" class="col-md-5">
-      <app-event-thumbnail (click)="handleToastrMessage(event.name)"  [event]="event"></app-event-thumbnail>
+      <!-- <app-event-thumbnail (click)="handleToastrMessage(event.name)"  [event]="event"></app-event-thumbnail> -->
+      <app-event-thumbnail [event]="event"></app-event-thumbnail>
     </div>
   </div>
 `
@@ -25,7 +25,7 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
 export class EventListComponent implements OnInit {
 
   events: any;
-  constructor(private eventService: EventService, private toastrService: ToastrService, private route: ActivatedRoute) {  }
+  constructor(private eventService: EventService, private route: ActivatedRoute) {  }
 
   ngOnInit(): void {
     // this.eventService.getEvents().subscribe( events => {
@@ -36,7 +36,7 @@ export class EventListComponent implements OnInit {
   // eventClickHandler(value){
   //   console.log('This is the value returned: ' + value);
   // }
-  handleToastrMessage(name: string) {
-    this.toastrService.sucess(name);
-  }
+  // handleToastrMessage(name: string) {
+  //   this.toastrService.sucess(name);
+  // }
 }
