@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
       (session => {
         this.foundSessions = session;
       });
-    //console.log(this.foundSessions);
+    // console.log(this.foundSessions);
   }
 
 }
