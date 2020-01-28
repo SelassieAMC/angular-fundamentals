@@ -19,6 +19,8 @@ import { EventService } from './events/Share/event.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { appRoutes } from './routes';
 import { AuthService } from './user/auth.service';
+import { UpvoteComponent } from './events/upvote/upvote.component';
+import { VoterService } from './events/share/voter.service';
 
 
 const toastr: Toastr = window['toastr'];
@@ -38,7 +40,8 @@ const jQuery: Toastr = window['$'];
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ const jQuery: Toastr = window['$'];
   ],
   providers: [
     EventService,
+    VoterService,
     {
       provide: JQ_TOKEN,
       useValue: jQuery
