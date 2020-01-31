@@ -21,6 +21,8 @@ import { appRoutes } from './routes';
 import { AuthService } from './user/auth.service';
 import { UpvoteComponent } from './events/upvote/upvote.component';
 import { VoterService } from './events/share/voter.service';
+import { LocationValidator } from './events/share/location.validator.directive';
+import { HttpClientModule } from "@angular/common/http";
 
 
 const toastr: Toastr = window['toastr'];
@@ -41,13 +43,15 @@ const jQuery: Toastr = window['$'];
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    LocationValidator
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
     EventService,
